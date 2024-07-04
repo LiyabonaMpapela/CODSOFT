@@ -19,20 +19,22 @@ public class ATM extends JFrame
  {
   frame = new JFrame();
   frame.setSize(500,500);
-  label = new JLabel("");
-  panel = new JPanel();
+   panel = new JPanel();
   button1 = new JButton("Deposit");
   button2 = new JButton("Withdraw");
   button3 = new JButton("Check balance");
-
+  label = new JLabel("");
 
   
-  panel.add(label);
   panel.add(button1);
   panel.add(button2);
   panel.add(button3);
+  panel.add(label);
+
+  frame.setTitle("ATM INTERFACE");
   frame.add(panel);
   frame.setVisible(true);
+  
  }
 
  public void withdraw(BankAccount account, double amount)
@@ -42,12 +44,12 @@ public class ATM extends JFrame
   {
    double update = current - amount ;
    account.setBalance(update);
-   System.out.println("Your have withdrawed R"+ amount+" successfully.");
+   label.setText("Your have withdrawed R"+ amount+" successfully.");
 
   }
   else
   {
-   System.out.println("You have insufficient funds to withdraw this amount.");
+   label.setText("You have insufficient funds to withdraw this amount.");
   }
   
  }
@@ -57,7 +59,7 @@ public class ATM extends JFrame
   double current = account.getBalance();
   double update = current + amount ;
   account.setBalance(update);
-  System.out.println("Your have deposited R"+ amount+" successfully.");
+  label.setText("Your have deposited R"+ amount+" successfully.");
 
 
  }
