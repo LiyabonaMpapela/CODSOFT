@@ -67,7 +67,7 @@ public class ATM extends JFrame
  public void checkBalance(BankAccount account)
  {
   double balance= account.getBalance();
-  System.out.println("Your current balance is R"+balance+".");
+  label.setText("Your current balance is R"+balance+".");
  }
  
  
